@@ -40,7 +40,7 @@ $medium = new Medium($config, $myOwnCache);
 
 ## Install
 
-The recommended way to install Guzzle is through
+The recommended way to install is through
 [Composer](http://getcomposer.org).
 
 ```bash
@@ -60,7 +60,7 @@ After installing, you need to require Composer's autoloader:
 require 'vendor/autoload.php';
 ```
 
-You can then later update Guzzle using composer:
+You can then later update using composer:
 
  ```bash
 composer.phar update
