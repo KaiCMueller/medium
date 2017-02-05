@@ -81,7 +81,7 @@ class Post
      */
     public function getDate($default = null)
     {
-        return $this->get(Processor::POST_KEY_URL, $default);
+        return $this->get(Processor::POST_KEY_DATE, $default);
     }
 
     /**
