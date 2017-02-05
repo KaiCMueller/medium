@@ -1,5 +1,5 @@
 {
-    "name": "KaiCMueller/Medium",
+    "name": "kaicmueller/medium",
     "description": "A PHP library for reading the latest posts from a Medium.com feed",
     "license": "MIT",
     "keywords": ["medium"],
