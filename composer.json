@@ -1,0 +1,27 @@
+{
+    "name": "KaiCMueller/Medium",
+    "description": "A PHP library for reading the latest posts from a Medium.com feed",
+    "license": "MIT",
+    "keywords": ["medium"],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Kai C. Müller",
+            "email": "kai@kcmueller.de",
+            "homepage": "http://www.kcmueller.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "KaiCMueller\\Medium\\": "src"
+        }
+    }
+}
