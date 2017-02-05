@@ -22,6 +22,10 @@ class FileCache implements CacheInterface
      */
     public function read()
     {
+        if (!file_exists($this->config->getFileCachePath())) {
+
+            return '';
+        }
         return file_get_contents($this->config->getFileCachePath());
     }
 
@@ -34,10 +38,14 @@ class FileCache implements CacheInterface
     }
 
     /**
-     * @return int
+     * @return bool
      */
     public function isOutdated()
     {
+        if (!file_exists($this->config->getFileCachePath())) {
+
+            return true;
+        }
         return time() - filemtime($this->config->getFileCachePath()) > $this->config->getCacheTime();
     }
 

@@ -13,28 +13,19 @@ I built this library for showing my latest Medium posts on my web profile. As th
 
 ```php
 
-
-$config = [
-  'user' => '@yourUsername',
-  'cacheTime' => 600, // an optional cache lifetime
-  'useFileCache' => false, // de-/activate the optional build in file cache
-  'fileCachePath' => '/path/to/cacheFile' // optional file path for internal file cache
-];
-
-$medium = new Medium($config); 
+$medium = new \KaiCMueller\Medium\Medium(
+    [
+        'user' => '@yourUsername',
+        'cacheTime' => 600, // an optional cache lifetime
+        'useFileCache' => false, // de-/activate the optional build in file cache
+        'fileCachePath' => '/path/to/cacheFile' // optional file path for internal file cache
+    ],
+    $cache // optional parameter to inject own cache class implementing \KaiCMueller\Medium\Cache\CacheInterface
+);
 
 foreach ($medium->getPosts() as $post) {
     echo $post->getTitle();
 }
-
-// using your own cache
-// it has to implement the methods defined in
-// KaiCMueller\Medium\Cache\CacheInterface
-
-$myOwnCache = new MyOwnCache();
-
-$medium = new Medium($config, $myOwnCache); 
-
 
 ```
 
