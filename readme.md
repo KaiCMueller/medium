@@ -2,7 +2,7 @@
 
 A PHP library for reading the latest posts from a Medium.com feed
 
-I built this library for showing my latest Medium posts on my web profile. As this might be interesting to others, I provide it to the public. This library is currently in beta status and has a limited feature set. Feel free to contact me for any bugs or contributions.
+I built this library for showing my latest Medium posts on my web profile. As this might be interesting to others, I provide it to the public. This library is currently under development and has a limited feature set. Feel free to contact me for any bugs or contributions.
 
 ## Current features: 
 
@@ -43,7 +43,7 @@ In your composer.json file add the following requirement
 
 ```json
 "require": {
-    "kaicmueller/medium": "dev-master"
+    "kaicmueller/medium": "~1.0"
 }
 ```
 
@@ -62,4 +62,5 @@ composer.phar update
  
 ## Versions
 
-* 0.1 - Beta - Initial Version
+* 1.0.1 - Adjusting Readme for correct versioning
+* 1.0.0 - First release version
