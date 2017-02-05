@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/KaiCMueller/medium.svg?branch=master)](https://travis-ci.org/KaiCMueller/medium)
+
 A PHP library for reading the latest posts from a Medium.com feed
 
 I built this library for showing my latest Medium posts on my web profile. As this might be interesting to others, I provide it to the public. This library is currently in beta status and has a limited feature set. Feel free to contact me for any bugs or contributions.
