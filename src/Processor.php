@@ -17,13 +17,13 @@ class Processor
     const DATA_KEY_PAYLOAD_REFERENCES = 'references';
     const DATA_KEY_PAYLOAD_REFERENCES_POST = 'Post';
     const DATA_KEY_PAYLOAD_REFERENCES_POST_TITLE = 'title';
+    const DATA_KEY_PAYLOAD_REFERENCES_POST_FIRSTPUBLISHEDAT = 'firstPublishedAt';
     const DATA_KEY_PAYLOAD_REFERENCES_POST_CONTENT = 'content';
     const DATA_KEY_PAYLOAD_REFERENCES_POST_CONTENT_SUBTITLE = 'subtitle';
     const DATA_KEY_PAYLOAD_REFERENCES_POST_UNIQUESLUG = 'uniqueSlug';
     const DATA_KEY_PAYLOAD_REFERENCES_POST_VIRTUALS = 'virtuals';
     const DATA_KEY_PAYLOAD_REFERENCES_POST_VIRTUALS_TAGS = 'tags';
     const DATA_KEY_PAYLOAD_REFERENCES_POST_VIRTUALS_TAGS_NAME = 'name';
-    const DATA_KEY_PAYLOAD_REFERENCES_POST_VIRTUALS_FIRSTPUBLISHEDATENGLISH = 'firstPublishedAtEnglish';
 
     /**
      * @var \KaiCMueller\Medium\Config
@@ -129,12 +129,13 @@ class Processor
                         $post
                     ),
                 self::POST_KEY_DATE =>
-                    $this->getArrayData(
-                        [
-                            self::DATA_KEY_PAYLOAD_REFERENCES_POST_VIRTUALS,
-                            self::DATA_KEY_PAYLOAD_REFERENCES_POST_VIRTUALS_FIRSTPUBLISHEDATENGLISH
-                        ],
-                        $post
+                    $this->microtimeToDate(
+                        $this->getArrayData(
+                            [
+                                self::DATA_KEY_PAYLOAD_REFERENCES_POST_FIRSTPUBLISHEDAT,
+                            ],
+                            $post
+                        )
                     ),
                 self::POST_KEY_TAGS => $tags
             ];
@@ -182,6 +183,15 @@ class Processor
         $decodedData = json_decode($rawData, true);
 
         return $decodedData;
+    }
+
+    /**
+     * @param int $microtime
+     * @return \DateTime
+     */
+    protected function microtimeToDate($microtime)
+    {
+        return \DateTime::createFromFormat('U', intval($microtime / 1000));
     }
 
 }

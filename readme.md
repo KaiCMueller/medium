@@ -62,5 +62,6 @@ composer.phar update
  
 ## Versions
 
+* 2.0.0 - Post date now is DateTime object 
 * 1.0.1 - Adjusting Readme for correct versioning
 * 1.0.0 - First release version
